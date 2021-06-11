@@ -1,23 +1,12 @@
 <template>
   <div>
-    <svg height="400" width="450">
-      <path id="lineAB" :d="lineAB" stroke="red" stroke-width="3" fill="none" />
-      <path id="lineBC" d="M 250 50 l 150 300" stroke="red" stroke-width="3" fill="none" />
-      <path d="M 175 200 l 150 0" stroke="green" stroke-width="3" fill="none" />
-      <path :d="lineCurved" stroke="blue" stroke-width="5" fill="none" />
-      <!-- Mark relevant points -->
-      <g stroke="black" stroke-width="3" fill="black">
-        <circle id="pointA" :cx="ax" cy="350" r="3" />
-        <circle id="pointB" cx="250" cy="50" r="3" />
-        <circle id="pointC" cx="400" cy="350" r="3" />
-      </g>
-      <!-- Label the points -->
-      <g font-size="30" font-family="sans-serif" fill="black" stroke="none"
-         text-anchor="middle">
-        <text :x="ax" y="350" dx="-30">A</text>
-        <text x="250" y="50" dy="-10">B</text>
-        <text x="400" y="350" dx="30">C</text>
-      </g>
+    <svg xmlns="http://www.w3.org/2000/svg" width="320" height="320">
+      <path :d="pathArc" stroke="black" fill="none" stroke-width="2" fill-opacity="0.5"/>
+      <path :d="pathEllipse1" stroke="blue" fill="none"/>
+      <path :d="pathEllipse2" stroke="blue" fill="none"/>
+      <path :d="pathEllipse3" stroke="blue" fill="none"/>
+      <circle :cx="endArcX" :cy="endArcY" r="4" fill="red"/>
+      <circle :cx="startArcX" :cy="startArcY" r="4" fill="red"/>
     </svg>
   </div>
 </template>
@@ -26,17 +15,61 @@
 export default {
   name: 'SkirtCircles',
   props: {
-    ax: {
+    startArcX: {
       type: Number,
-      default: 100,
+      default: 110,
+    },
+    startArcY: {
+      type: Number,
+      default: 215,
+    },
+    rx: { // elypsen radius
+      type: Number,
+      default: 50,
+    },
+    ry: { // elypsen radius
+      type: Number,
+      default: 60,
+    },
+    xAxisRotation: {
+      type: Number,
+      default: 0,
+    },
+    largeArcFlag: { // langen weg, oder kurzen?
+      type: Number,
+      default: 0,
+    },
+    sweepFlag: { // welche elypse?
+      type: Number,
+      default: 1,
+    },
+    endArcX: {
+      type: Number,
+      default: 150.71,
+    },
+    endArcY: {
+      type: Number,
+      default: 170.29,
     },
   },
   computed: {
-    lineAB() {
-      return `M ${this.ax} 350 l 150 -300`;
+    pathArc() {
+      return `M 10 315
+           L ${this.startArcX} ${this.startArcY}
+           A ${this.rx} ${this.ry} ${this.xAxisRotation} ${this.largeArcFlag} ${this.sweepFlag} ${this.endArcX} ${this.endArcY}
+           L 315 10`;
     },
-    lineCurved() {
-      return `M ${this.ax} 350 q 150 -300 300 0`;
+    pathEllipse1() {
+      return `M ${this.startArcX} ${this.startArcY}
+          A ${this.rx} ${this.ry} ${this.xAxisRotation} ${1} ${0} ${this.endArcX} ${this.endArcY}`;
+    },
+    pathEllipse2() {
+      return `M ${this.startArcX} ${this.startArcY}
+          A ${this.rx} ${this.ry} ${this.xAxisRotation} ${1} ${1} ${this.endArcX} ${this.endArcY}`;
+    },
+    pathEllipse3() {
+      return `M ${this.startArcX} ${this.startArcY}
+          A ${this.rx} ${this.ry} ${this.xAxisRotation} ${0} ${0} ${this.endArcX} ${this.endArcY}`;
     },
   },
 };
