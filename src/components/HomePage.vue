@@ -1,22 +1,14 @@
 <template>
   <div class="hello">
-    <p>{{ 'hello' }}</p>
-    <skirt-circles :ax="parseInt(ax)"></skirt-circles>
-    <label>Ax</label>
-    <input type="number" v-model="ax">
+    <ellipse-playground></ellipse-playground>
   </div>
 </template>
 
 <script>
-import SkirtCircles from './SkirtCircles.vue';
+import EllipsePlayground from './EllipsePlayground.vue';
 
 export default {
   name: 'HomePage',
-  components: { SkirtCircles },
-  data() {
-    return {
-      ax: 100,
-    };
-  },
+  components: { EllipsePlayground },
 };
 </script>

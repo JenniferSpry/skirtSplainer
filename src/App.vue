@@ -1,8 +1,12 @@
 <template>
   <div id="app">
-    <main>
-      <HomePage/>
-    </main>
+    <v-app>
+      <v-main>
+        <v-container fluid>
+          <HomePage/>
+        </v-container>
+      </v-main>
+    </v-app>
   </div>
 </template>
 
