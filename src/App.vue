@@ -2,7 +2,7 @@
   <div id="app">
     <v-app>
       <v-main>
-        <v-container fluid>
+        <v-container>
           <HomePage/>
         </v-container>
       </v-main>

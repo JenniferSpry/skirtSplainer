@@ -103,25 +103,25 @@ export default {
     return {
       width: 600,
       height: 320,
-      startArcX: 110,
-      startArcY: 215,
+      startArcX: 260,
+      startArcY: 180,
       rx: 50,
       ry: 60,
       xAxisRotation: 0,
       largeArc: false,
       sweep: true,
-      endArcX: 150.71,
-      endArcY: 170.29,
+      endArcX: 340,
+      endArcY: 140,
     };
   },
   computed: {
     pathArc() {
-      return `M 10 315
+      return `M 20 ${this.height - 20}
            L ${this.startArcX} ${this.startArcY}
            A ${this.rx} ${this.ry} ${this.xAxisRotation}
            ${this.largeArc ? 1 : 0} ${this.sweep ? 1 : 0}
            ${this.endArcX} ${this.endArcY}
-           L 315 10`;
+           L ${this.width - 20} 20`;
     },
     pathEllipse1() {
       return `M ${this.startArcX} ${this.startArcY}
