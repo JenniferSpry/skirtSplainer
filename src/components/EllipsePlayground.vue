@@ -14,19 +14,17 @@
     </v-row>
     <v-row justify="center">
       <v-card :class="'explanation'">
-        <v-card-text class="large-text">
-            <v-tooltip v-for="(part, index) in arcDescription" :key="index">
-              <template v-slot:activator="{ on, attrs }">
-                <p v-bind="attrs" v-on="on" >
-                  <span v-for="(item, index) in part.textParts"
-                        :key="index"
-                        v-bind:style="{ color: item.color }">
-                    {{ item.text }}&nbsp;
-                  </span>
-                </p>
-              </template>
-              <span>{{ part.description }}</span>
-            </v-tooltip>
+        <v-card-text>
+            <div v-for="(part, index) in arcDescription" :key="index">
+              <p class="explanation-description">{{ part.description }}</p>
+              <p class="large-text">
+                <span v-for="(item, index) in part.textParts"
+                      :key="index"
+                      v-bind:style="{ color: item.color }">
+                  {{ item.text }}&nbsp;
+                </span>
+              </p>
+            </div>
         </v-card-text>
       </v-card>
     </v-row>
@@ -222,6 +220,13 @@ export default {
   p:last-child {
     margin-bottom: 0;
   }
+  .v-card__text {
+    padding-top: 0;
+  }
+}
+.explanation-description {
+  margin-top: 15px;
+  margin-bottom: 5px;
 }
 .large-text {
   font-size: 2.5em;
