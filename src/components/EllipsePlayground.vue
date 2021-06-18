@@ -1,5 +1,22 @@
 <template>
-  <div>
+  <v-container>
+    <v-row justify="center">
+      <v-col>
+        <v-card>
+          <v-card-title>Path - Elliptical Arc Curve</v-card-title>
+          <v-card-text>
+            <blockquote class="blockquote">
+              Elliptical arc curves are curves defined as a portion of an ellipse.
+              It is sometimes easier to draw highly regular curves with an elliptical
+              arc than with a Bézier curve.
+            </blockquote>
+            <p>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#elliptical_arc_curve">https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/d#elliptical_arc_curve</a>
+            </p>
+          </v-card-text>
+        </v-card>
+      </v-col>
+    </v-row>
     <v-row justify="center">
       <v-card>
         <svg xmlns="http://www.w3.org/2000/svg" :width="600" :height="320">
@@ -113,7 +130,7 @@
         </v-row>
       </v-col>
     </v-row>
-  </div>
+  </v-container>
 </template>
 
 <script>

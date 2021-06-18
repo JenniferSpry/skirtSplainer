@@ -1,7 +1,5 @@
 <template>
-  <div class="hello">
-    <ellipse-playground></ellipse-playground>
-  </div>
+  <ellipse-playground></ellipse-playground>
 </template>
 
 <script>
