@@ -1,4 +1,6 @@
-# skirt-splainer
+# SVG Playground
+
+A little project to learn [Scalable Vector Graphics](https://developer.mozilla.org/en-US/docs/Web/SVG) made with [vue js](https://vuejs.org/).
 
 ## Project setup
 ```

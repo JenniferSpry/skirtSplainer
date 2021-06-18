@@ -1,6 +1,10 @@
 <template>
   <div id="app">
     <v-app>
+      <v-app-bar app dense>
+        <v-toolbar-title>SVG Playground</v-toolbar-title>
+      </v-app-bar>
+
       <v-main>
         <v-container>
           <HomePage/>
