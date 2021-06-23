@@ -12,7 +12,7 @@ docker build --target build -t jennepry/svg-playground-dev .
 
 Run the dev server, mount current directory as volume (while ignoring the node_modules folder).
 ```
-docker run -it -p 8080:8080 --rm --name svg-playground-dev -v /app/node_modules -v "$(pwd)":/app jennepry/svg-playground-dev npm run serve
+docker run -it -p 8080:8080 --rm --name svg-playground-dev -v /app/node_modules -v "$(pwd)":/app jennepry/svg-playground-dev npm run build
 ```
 
 Bash into running container.
