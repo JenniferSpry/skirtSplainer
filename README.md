@@ -20,6 +20,11 @@ Bash into running container.
 docker container exec -it svg-playground-dev bash
 ```
 
+If you want a local copy of the node_modules folder (for code completion for example). Copy it back from the container.
+```
+docker cp svg-playground-dev:/app/node_modules/. node_modules
+```
+
 ### Docker deployment
 ```
 docker build -t jennepry/svg-playground-app .
