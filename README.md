@@ -2,6 +2,8 @@
 
 A little project to learn [Scalable Vector Graphics](https://developer.mozilla.org/en-US/docs/Web/SVG) made with [vue js](https://vuejs.org/).
 
+See: https://jenniferspry.github.io/svgPlayground/
+
 ## Project setup
 
 ### Docker development
@@ -30,6 +32,11 @@ docker cp svg-playground-dev:/app/node_modules/. node_modules
 docker build -t jennepry/svg-playground-app .
 docker run -it -p 8080:80 --rm --name svg-playground-app jennepry/svg-playground-app
 ```
+
+### Github deployment
+The project is automatically build and deployed to [github pages](https://pages.github.com/) 
+through [github actions](https://github.com/features/actions) and [peaceiris/actions-gh-pages](https://github.com/peaceiris/actions-gh-pages);
+
 
 ## Help
 ```
